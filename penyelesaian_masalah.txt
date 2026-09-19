@@ -1,0 +1,32 @@
+Deskripsi Masalah
+
+Dalam satu repository GitHub terdapat satu branch utama, yaitu main, serta dua branch yang digunakan oleh masing-masing anggota tim, yaitu sri dan bobby.
+
+Sri dan Bobby sama-sama mengerjakan bagian form pada file form.html. Sri menambahkan kode:
+
+<input type="text" name="search-produk-3">
+
+Sementara itu, Bobby juga menambahkan kode pada bagian form yang sama, tetapi menggunakan kode:
+
+<input type="text" name="search-product-4">
+
+Masalahnya, sebelum melakukan perubahan dan push, Sri dan Bobby belum melakukan pull untuk mengambil perubahan terbaru. Akibatnya, ketika perubahan dari kedua branch ingin digabungkan ke branch main, Git menemukan adanya perbedaan pada bagian kode yang sama sehingga terjadi merge conflict.
+
+Cara Menyelesaikan Masalah
+
+Untuk menyelesaikan conflict tersebut, perubahan dari branch sri dan bobby perlu dibandingkan terlebih dahulu. Setelah itu, anggota tim menentukan kode yang akan digunakan.
+
+Jika hanya salah satu kode yang dibutuhkan, maka kode yang tidak digunakan bisa dihapus. Namun, jika kedua kode tersebut memang diperlukan, keduanya bisa digabungkan menjadi satu.
+
+Contohnya:
+
+<input type="text" name="search-produk-3">
+<input type="text" name="search-product-4">
+
+Setelah conflict selesai, hasil perubahan tersebut kemudian di-commit dan di-merge ke branch main.
+
+Jadi, dalam kasus ini Git tidak secara otomatis menentukan kode Sri atau Bobby yang akan digunakan. Git hanya menunjukkan bahwa ada bagian kode yang berbeda dan membutuhkan keputusan dari developer.
+
+Secara singkat, alurnya adalah:
+
+Sri dan Bobby melakukan perubahan → belum pull → terjadi perbedaan kode → muncul merge conflict → conflict diselesaikan → commit → merge ke main.
